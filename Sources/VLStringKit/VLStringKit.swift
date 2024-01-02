@@ -1,2 +1,10 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+import Foundation
+
+public
+extension String
+{
+ func trim() -> String
+ {
+  return self.trimmingCharacters(in: .whitespacesAndNewlines)
+ }
+}
