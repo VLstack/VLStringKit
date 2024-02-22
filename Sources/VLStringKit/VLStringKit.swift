@@ -3,8 +3,8 @@ import Foundation
 public
 extension String
 {
- func trim() -> String
+ func trim(_ set: CharacterSet = .whitespacesAndNewlines) -> String
  {
-  return self.trimmingCharacters(in: .whitespacesAndNewlines)
+  self.trimmingCharacters(in: set)
  }
 }
