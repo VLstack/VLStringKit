@@ -1,7 +1,6 @@
 import Foundation
 
-public
-extension String
+public extension String
 {
  func trim(_ set: CharacterSet = .whitespacesAndNewlines) -> String
  {
