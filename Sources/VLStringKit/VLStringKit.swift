@@ -6,7 +6,7 @@ public extension String
  func pluralized(count: Double) -> String
  {
   let inflected: String = String(AttributedString(localized: "^[\(count) \(self)](inflect: true)").characters)
-  let replaceTarget: String = String(AttributedString(localized: "^[\(count)](inflect: true)").characters)
+  let replaceTarget: String = String(AttributedString(localized: "\(count)").characters)
   
   return inflected.replacingOccurrences(of: replaceTarget, with: "").trim()
  }
