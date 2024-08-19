@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 public extension String
 {
@@ -18,5 +19,16 @@ public extension String
  func trim(_ set: CharacterSet = .whitespacesAndNewlines) -> String
  {
   self.trimmingCharacters(in: set)
+ }
+}
+
+public extension LocalizedStringKey
+{
+ func toString() -> String
+ {
+  let mirror = Mirror(reflecting: self)
+  let str = mirror.children.first { $0.label == "key" }?.value as? String
+
+  return str ?? ""
  }
 }
