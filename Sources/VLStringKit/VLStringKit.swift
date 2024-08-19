@@ -24,6 +24,16 @@ public extension String
 
 public extension LocalizedStringKey
 {
+ func pluralized(count: Double) -> String
+ {
+  self.toString().pluralized(count: count)
+ }
+
+ func pluralized(count: Int) -> String
+ {
+  self.toString().pluralized(count: count)
+ }
+
  func toString() -> String
  {
   let mirror = Mirror(reflecting: self)
