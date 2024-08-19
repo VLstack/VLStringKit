@@ -37,8 +37,11 @@ public extension LocalizedStringKey
  func toString() -> String
  {
   let mirror = Mirror(reflecting: self)
-  let str = mirror.children.first { $0.label == "key" }?.value as? String
-
-  return str ?? ""
+  if let str = mirror.children.first(where: { $0.label == "key" })?.value as? String
+  {
+   return NSLocalizedString(str, comment: "")
+  }
+  
+  return ""
  }
 }
