@@ -1,6 +1,6 @@
 extension String
 {
- var firstCharacterCapitalized: String
+ public var firstCharacterCapitalized: String
  {
   /// Returns a new string with the first character capitalized and the remaining characters in lowercase.
   ///
