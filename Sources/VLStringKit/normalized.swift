@@ -45,4 +45,11 @@ extension String
    "'": [ "’", "‘", "'" ]
   ]
  }()
+
+ public func normalizedWords(minCharacters: Int = 2) -> [ String ]
+ {
+  self.normalized.split(separator: /\W+/)
+      .map { String($0) }
+      .filter { $0.count >= minCharacters }
+ }
 }
