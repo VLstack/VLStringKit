@@ -1,12 +1,13 @@
 extension String
 {
+ /// Returns a new string where the first character is uppercased and all remaining characters are lowercased.
+ ///
+ /// If the string is empty, the original string is returned unchanged.
+ ///
+ /// - Returns: A new string with the first character uppercased and the rest lowercased.
+ @inlinable
  public var firstCharacterCapitalized: String
  {
-  /// Returns a new string with the first character capitalized and the remaining characters in lowercase.
-  ///
-  /// If the string is empty, it returns the original string.
-  ///
-  /// - Returns: A string with the first character capitalized and the rest in lowercase.
   guard let firstLetter = self.first?.uppercased()
   else { return self }
 
