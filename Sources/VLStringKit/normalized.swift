@@ -1,12 +1,12 @@
 extension String
 {
+ /// Normalizes the string by trimming whitespace, folding diacritics,
+ /// and replacing specific characters with their normalized equivalents.
+ ///
+ /// - Returns: A normalized string with diacritics removed, whitespace condensed,
+ /// and specific characters replaced.
  public var normalized: String
  {
-  /// Normalizes the string by trimming whitespace, folding diacritics,
-  /// and replacing specific characters with their normalized equivalents.
-  ///
-  /// - Returns: A normalized string with diacritics removed, whitespace condensed,
-  /// and specific characters replaced.
   var result: String = self.trim()
                            .folding(options: [ .diacriticInsensitive, .caseInsensitive ],
                                     locale: .current)
@@ -46,6 +46,12 @@ extension String
   ]
  }()
 
+ /// Splits the normalized string into words and filters out short tokens.
+ ///
+ /// - Parameter minCharacters: The minimum word length to include (default is 2).
+ /// - Returns: An array of words extracted from the normalized string.
+ ///
+ /// - Note: Non-alphanumeric characters are used as delimiters.
  public func normalizedWords(minCharacters: Int = 2) -> [ String ]
  {
   self.normalized.split(separator: /\W+/)
