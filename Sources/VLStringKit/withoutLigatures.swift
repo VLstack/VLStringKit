@@ -1,6 +1,6 @@
 extension String
 {
- var withoutLigatures: String
+ public var withoutLigatures: String
  {
   var result = self
 
