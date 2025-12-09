@@ -4,7 +4,7 @@ extension String
  {
   var result = self
 
-  // MARK: Ligatures historiques / Typographiques
+  // MARK: - Ligatures historiques / Typographiques
   // MARK: - Français/Anglais/Latin
   result = result.replacingOccurrences(of: "œ", with: "oe") // U+0153 (oe)
   result = result.replacingOccurrences(of: "Œ", with: "OE") // U+0152 (OE)
