@@ -12,5 +12,8 @@ let package = Package(name: "VLStringKit",
                       ],
                       targets:
                       [
-                       .target(name: "VLStringKit")
+                       .target(name: "VLStringKit"),
+                       .testTarget(name: "VLStringKitTests",
+                                   dependencies: [ "VLStringKit" ],
+                                   swiftSettings: [ .enableUpcomingFeature("ApproachableConcurrency") ])
                       ])

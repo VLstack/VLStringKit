@@ -25,6 +25,9 @@ extension String
   let sourceLength = sourceChars.count
   let targetLength = targetChars.count
 
+  guard sourceLength > 0 else { return targetLength }
+  guard targetLength > 0 else { return sourceLength }
+  
   var matrix = [ [Int] ](repeating: [Int](repeating: 0,
                                           count: targetLength + 1),
                          count: sourceLength + 1)
